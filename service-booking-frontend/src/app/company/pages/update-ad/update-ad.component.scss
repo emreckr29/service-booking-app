@@ -1,0 +1,103 @@
+.update-ad-container {
+  max-width: 480px;
+  margin: 30px auto;
+  padding: 20px 15px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  .title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #1890ff;
+    font-size: 1.8rem;
+  }
+
+  .file-upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+
+    .file-upload-label {
+      cursor: pointer;
+      color: #1890ff;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 10px 25px;
+      border: 2px dashed #1890ff;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: rgba(24, 144, 255, 0.1);
+      }
+    }
+
+    .image-preview {
+      margin-top: 15px;
+
+      .circle-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 0 8px rgba(24, 144, 255, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .preview-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  nz-form-item {
+    margin-bottom: 20px;
+
+    nz-form-control {
+      input,
+      textarea {
+        border-radius: 8px;
+        padding: 10px 14px;
+        font-size: 1rem;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+    }
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 12px 0;
+    font-weight: 600;
+    font-size: 1.15rem;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 520px) {
+  .update-ad-container {
+    margin: 15px 10px;
+    padding: 15px 10px;
+
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .file-upload-wrapper {
+      .circle-image {
+        width: 90px;
+        height: 90px;
+      }
+    }
+  }
+}

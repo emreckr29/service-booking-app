@@ -1,0 +1,48 @@
+<div class="signup-container">
+  <div class="signup-card">
+    <h1 class="signup-title">Company Signup</h1>
+
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" class="signup-form">
+      <nz-form-item>
+        <nz-form-control nzHasFeedback nzErrorTip="Please enter a valid E-mail">
+          <input nz-input placeholder="E-mail" formControlName="email" id="email">
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzHasFeedback nzErrorTip="Please enter a valid password">
+          <input nz-input type="password" placeholder="Password" formControlName="password" id="password">
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzHasFeedback nzErrorTip="Passwords do not match">
+          <input nz-input type="password" placeholder="Confirm Password" formControlName="checkPassword" id="checkPassword">
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzHasFeedback nzErrorTip="Please enter your company name">
+          <input nz-input placeholder="Company Name" formControlName="name" id="name">
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzHasFeedback nzErrorTip="Please enter your address">
+          <input nz-input placeholder="Address" formControlName="adress" id="adress">
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzHasFeedback nzErrorTip="Please enter a valid phone number">
+          <input nz-input placeholder="Phone" formControlName="phone" id="phone">
+        </nz-form-control>
+      </nz-form-item>
+
+      <button nz-button nzType="primary" class="signup-btn">Register</button>
+      <div class="signup-link">
+        Already have an account? <a routerLink="/login">Login</a>
+      </div>
+    </form>
+  </div>
+</div>

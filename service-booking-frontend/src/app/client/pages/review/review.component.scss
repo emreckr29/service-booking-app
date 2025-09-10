@@ -1,0 +1,61 @@
+.post-review-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    color: #003973;
+    font-weight: 700;
+  }
+
+  .review-form {
+    display: flex;
+    flex-direction: column;
+
+    nz-form-item {
+      margin-bottom: 20px;
+    }
+
+    textarea[nz-input] {
+      resize: vertical;
+      font-size: 1rem;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #d9d9d9;
+      transition: border-color 0.3s;
+
+      &:focus {
+        border-color: #108ee9;
+        box-shadow: 0 0 0 2px rgba(16, 142, 233, 0.2);
+      }
+    }
+
+    nz-rate {
+      font-size: 24px;
+    }
+
+    .submit-btn {
+      align-self: flex-end;
+      padding: 6px 24px;
+      font-weight: 600;
+      border-radius: 6px;
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .post-review-container {
+    padding: 15px;
+
+    .review-form {
+      .submit-btn {
+        width: 100%;
+        align-self: stretch;
+      }
+    }
+  }
+}

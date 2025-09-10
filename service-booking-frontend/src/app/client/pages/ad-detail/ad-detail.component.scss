@@ -1,0 +1,132 @@
+.ad-detail-container {
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+
+  .ad-main-info {
+    display: flex;
+    gap: 20px;
+
+    .ad-image-wrapper {
+      flex: 1;
+
+      .ad-image {
+        width: 100%;
+        max-width: 200px;
+        height: 130px;
+        border-radius: 10px;
+        object-fit: cover;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      }
+    }
+
+    .ad-info {
+      flex: 2;
+
+      .ad-title {
+        margin-bottom: 8px;
+        cursor: pointer;
+        color: #108ee9;
+      }
+
+      h5 {
+        margin: 6px 0;
+        font-weight: 500;
+
+        b {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .book-service {
+    margin-top: 30px;
+
+    h2 {
+      margin-bottom: 20px;
+      color: #003973;
+      font-weight: 700;
+    }
+
+    .booking-form {
+      nz-form-item {
+        margin-bottom: 20px;
+      }
+
+      button {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .reviews-section {
+    margin-top: 40px;
+
+    .review-card-wrapper {
+      margin-bottom: 20px;
+
+      nz-card {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-radius: 6px;
+
+        p {
+          margin: 8px 0;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ad-detail-container {
+    padding: 15px;
+
+    .ad-main-info {
+      flex-direction: column;
+      align-items: center;
+
+      .ad-image-wrapper {
+        max-width: 100%;
+        .ad-image {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      .ad-info {
+        text-align: center;
+        margin-top: 15px;
+      }
+    }
+
+    .book-service {
+      h2 {
+        text-align: center;
+      }
+      .booking-form {
+        nz-form-item {
+          margin-bottom: 15px;
+        }
+        button {
+          width: 100%;
+          margin-top: 15px;
+        }
+      }
+    }
+
+    .reviews-section {
+      .review-card-wrapper {
+        nz-card {
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

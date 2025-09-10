@@ -1,0 +1,20 @@
+<nz-table #basicTable [nzData]="bookings" [nzPageSize]="20" [nzShowPagination]="false" class="custom-table">
+  <thead>
+    <tr>
+      <th>Client Name</th>
+      <th>Service</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let booking of basicTable.data">
+      <td data-label="Client Name">{{ booking.userName }}</td>
+      <td data-label="Service">{{ booking.serviceName }}</td>
+      <td data-label="Date">{{ booking.bookDate | date: "dd/MM/yyyy" }}</td>
+      <td data-label="Status">{{ booking.reservationStatus }}</td>
+      <td data-label="Action">
+        <ng-container *ngIf="booking.reservationStatus === 'PENDING'">
+          <button nz-button nzSize="small" nzType="primary" (click)="changeBookingStatus(booking.id, 'Approve')">Approve</button>
+          <button nz-button nzSize="small" nzType="primary" nzDanger (click)="changeBookingStatus(booking.id, 'Reject')">Reject</button>

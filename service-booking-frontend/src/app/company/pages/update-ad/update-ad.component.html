@@ -1,0 +1,84 @@
+<div class="update-ad-container">
+  <h2 class="title">Update Ad</h2>
+
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="updateAd()" class="ad-form">
+    <div class="file-upload-wrapper">
+      <label class="file-upload-label" for="fileInput">
+        Select a File
+        <input
+          id="fileInput"
+          type="file"
+          accept="image/x-png,image/gif,image/jpeg"
+          (change)="onFileSelected($event)"
+          hidden
+        />
+      </label>
+
+      <div *ngIf="imagePreview || existingImage" class="image-preview">
+        <div class="circle-image">
+          <img
+            [src]="imagePreview ? imagePreview : existingImage"
+            alt="Preview Image"
+            class="preview-image"
+          />
+        </div>
+      </div>
+    </div>
+
+    <nz-form-item>
+      <nz-form-control
+        nzHasFeedback
+        [nzValidateStatus]="validateForm.controls['serviceName']"
+        nzErrorTip="This input is required!"
+      >
+        <input
+          nz-input
+          placeholder="Service Name"
+          formControlName="serviceName"
+          required
+        />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control
+        nzHasFeedback
+        [nzValidateStatus]="validateForm.controls['price']"
+        nzErrorTip="This input is required!"
+      >
+        <input
+          nz-input
+          type="number"
+          placeholder="Price"
+          formControlName="price"
+          required
+        />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control
+        nzHasFeedback
+        [nzValidateStatus]="validateForm.controls['description']"
+        nzErrorTip="This input is required!"
+      >
+        <textarea
+          nz-input
+          placeholder="Description"
+          formControlName="description"
+          rows="3"
+          required
+        ></textarea>
+      </nz-form-control>
+    </nz-form-item>
+
+    <button
+      nz-button
+      nzType="primary"
+      [disabled]="!validateForm.valid"
+      class="submit-btn"
+    >
+      Update Ad
+    </button>
+  </form>
+</div>

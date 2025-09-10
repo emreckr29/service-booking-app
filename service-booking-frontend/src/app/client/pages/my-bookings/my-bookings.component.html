@@ -1,0 +1,37 @@
+<nz-table
+  #basicTable
+  [nzData]="bookedServices"
+  [nzPageSize]="20"
+  [nzShowPagination]="false"
+  [nzScroll]="{ x: '100%' }"
+  class="custom-booking-table"
+>
+  <thead>
+    <tr>
+      <th>Service</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let booking of basicTable.data">
+      <td class="service-name" data-label="Service">{{ booking.serviceName }}</td>
+      <td data-label="Date">{{ booking.bookDate | date: 'dd/MM/yyyy' }}</td>
+      <td class="status" data-label="Status">{{ booking.reservationStatus }}</td>
+      <td data-label="Action">
+        <button
+          *ngIf="booking.reviewStatus === 'FALSE'"
+          nz-button
+          nzType="primary"
+          nzDanger
+          nzSize="small"
+          [routerLink]="['/client/review', booking.id]"
+          class="review-btn"
+        >
+          Review
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

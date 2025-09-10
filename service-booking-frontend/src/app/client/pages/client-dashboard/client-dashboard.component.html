@@ -1,0 +1,46 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="searchAdByName()" class="search-form">
+  <input
+    nz-input
+    placeholder="Enter service to search"
+    nzSize="large"
+    class="search-input"
+    formControlName="service"
+  />
+  <button
+    nz-button
+    nzSize="large"
+    nzType="primary"
+    style="margin-left: 15px;"
+    [disabled]="validateForm.invalid"
+  >
+    Search
+  </button>
+</form>
+
+<div class="ads-container">
+  <div class="ad-card" *ngFor="let ad of ads">
+    <div nz-row [nzGutter]="16">
+      <div nz-col nzSpan="8">
+        <img
+          class="profile"
+          [src]="updateImage(ad.returnedImage)"
+          style="height: 130px; width: 100%; border-radius: 10px; object-fit: cover"
+        />
+      </div>
+      <div nz-col nzSpan="16">
+        <h2 style="cursor: pointer; color: #108ee9">
+          {{ ad.serviceName }}
+        </h2>
+        <hr />
+        <h5>Price: <b>{{ ad.price }}</b></h5>
+        <h5>Description: <b>{{ ad.description }}</b></h5>
+        <hr />
+        <div style="float: right;">
+          <button nzSize="small" nz-button nzType="primary" [routerLink]="'/client/ad/' + ad.id">
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

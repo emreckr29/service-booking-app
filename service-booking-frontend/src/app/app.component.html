@@ -1,0 +1,35 @@
+<div *ngIf="!isCompanyLoggedIn && !isClientLoggedIn" class="navbar">
+  <nz-header class="app-header">
+    <div class="logo">Buy and Sell</div>
+    <nav class="nav-links">
+      <a routerLink="/home" routerLinkActive="active">Home</a>
+      <a routerLink="/register" routerLinkActive="active">Register</a>
+      <a routerLink="/login" routerLinkActive="active">Login</a>
+    </nav>
+  </nz-header>
+</div>
+
+<div *ngIf="isClientLoggedIn" class="navbar">
+  <nz-header class="app-header">
+    <div class="logo">Buy and Sell</div>
+    <nav class="nav-links">
+      <a routerLink="/client/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/client/bookings" routerLinkActive="active">Bookings</a>
+      <a (click)="logout()">Logout</a>
+    </nav>
+  </nz-header>
+</div>
+
+<div *ngIf="isCompanyLoggedIn" class="navbar">
+  <nz-header class="app-header">
+    <div class="logo">Buy and Sell</div>
+    <nav class="nav-links">
+      <a routerLink="/company/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/company/ad" routerLinkActive="active">Post Ad</a>
+      <a routerLink="/company/ads" routerLinkActive="active">Ads</a>
+      <a (click)="logout()">Logout</a>
+    </nav>
+  </nz-header>
+</div>
+
+<router-outlet></router-outlet>

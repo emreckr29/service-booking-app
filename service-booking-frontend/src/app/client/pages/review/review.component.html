@@ -1,0 +1,28 @@
+<div class="post-review-container">
+  <div nz-row justify="center" style="margin-bottom: 20px;">
+    <h2>Post Review</h2>
+  </div>
+
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="giveReview()" class="review-form">
+    <nz-form-item>
+      <nz-form-control nzHasFeedback nzErrorTip="This Input is Required!">
+        <textarea
+          rows="5"
+          nz-input
+          placeholder="Write Review"
+          formControlName="review"
+        ></textarea>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control nzHasFeedback nzErrorTip="This Input is Required!">
+        <nz-rate formControlName="rating"></nz-rate>
+      </nz-form-control>
+    </nz-form-item>
+
+    <button nz-button nzType="primary" class="submit-btn" [disabled]="validateForm.invalid">
+      Post
+    </button>
+  </form>
+</div>
